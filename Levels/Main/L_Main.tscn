@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://FirstPerson.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Main/Geometry/Floor.tscn" type="PackedScene" id=2]
@@ -12,7 +12,12 @@
 [ext_resource path="res://Levels/Main/Area.gd" type="Script" id=10]
 [ext_resource path="res://addons/kenney_prototype_textures/red/texture_09.png" type="Texture" id=11]
 [ext_resource path="res://addons/kenney_prototype_textures/orange/texture_07.png" type="Texture" id=12]
+[ext_resource path="res://Levels/Main/Label.gd" type="Script" id=13]
 [ext_resource path="res://addons/kenney_prototype_textures/orange/texture_10.png" type="Texture" id=14]
+[ext_resource path="res://Levels/Main/Timer.gd" type="Script" id=15]
+[ext_resource path="res://Levels/Main/Node2D.gd" type="Script" id=16]
+[ext_resource path="res://addons/kenney_prototype_textures/red/texture_05.png" type="Texture" id=17]
+[ext_resource path="res://Levels/Nivel_2.tscn" type="PackedScene" id=18]
 
 [sub_resource type="SpatialMaterial" id=24]
 albedo_texture = ExtResource( 9 )
@@ -84,6 +89,12 @@ extents = Vector3( 0.176245, 1.2016, 0.513598 )
 
 [sub_resource type="BoxShape" id=9]
 extents = Vector3( 0.218364, 0.629531, 1.95236 )
+
+[sub_resource type="SpatialMaterial" id=27]
+albedo_texture = ExtResource( 17 )
+
+[sub_resource type="SpatialMaterial" id=28]
+albedo_texture = ExtResource( 17 )
 
 [node name="Nivel_1" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.410734, 0.498449, 0.030405 )
@@ -282,6 +293,62 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.52761, 0 )
 
 [node name="FirstPerson" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47134, 26.4254, 210.158 )
+gravity_multiplier = 5.0
 
-[connection signal="body_entered" from="Entrance" to="Entrance" method="_on_Entrance_body_entered"]
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 282.376, 16.7373, 211.579 )
+
+[node name="Spatial" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 283.259, 0, 0 )
+
+[node name="ArenaGeometry2" type="Spatial" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00136161, 0.0351963, 0.00745201 )
+
+[node name="inicio" type="Spatial" parent="Spatial/ArenaGeometry2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38342, 14.3309, 0 )
+
+[node name="fisico" parent="Spatial/ArenaGeometry2/inicio" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 208.736 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 27 )
+
+[node name="atras" parent="Spatial/ArenaGeometry2/inicio" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -5, 228.562 )
+visible = false
+skeleton = NodePath("../../..")
+
+[node name="izquierda" parent="Spatial/ArenaGeometry2/inicio" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -19.7174, -5, 208.787 )
+visible = false
+skeleton = NodePath("../../..")
+
+[node name="derecha" parent="Spatial/ArenaGeometry2/inicio" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 19.8131, -5, 208.787 )
+visible = false
+skeleton = NodePath("../../..")
+
+[node name="Plataforma final" parent="Spatial/ArenaGeometry2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.67524, -4.43539, -182.939 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 28 )
+script = ExtResource( 7 )
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource( 16 )
+
+[node name="Label" type="Label" parent="Node2D"]
+margin_left = 978.0
+margin_top = 27.0
+margin_right = 996.0
+margin_bottom = 44.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+script = ExtResource( 13 )
+
+[node name="Timer" type="Timer" parent="Node2D"]
+script = ExtResource( 15 )
+
+[connection signal="body_entered" from="Entrance" to="FirstPerson" method="_on_Entrance_body_entered"]
 [connection signal="body_entered" from="Muerte" to="Muerte" method="_on_Muerte_body_entered"]
+[connection signal="timeout" from="Node2D/Timer" to="Node2D" method="_on_Timer_timeout"]

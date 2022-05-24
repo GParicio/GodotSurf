@@ -14,9 +14,9 @@ func _ready() -> void:
 	if !OS.is_debug_build():
 		fast_close = false
 	
-	if fast_close:
-		print("** Fast Close enabled in the 'L_Main.gd' script **")
-		print("** 'Esc' to close 'Shift + F1' to release mouse **")
+#	if fast_close:
+#		print("** Fast Close enabled in the 'L_Main.gd' script **")
+#		print("** 'Esc' to close 'Shift + F1' to release mouse **")
 	
 	set_process_input(fast_close)
 
@@ -24,6 +24,8 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit() # Quits the game
+	if event.is_action_pressed("reload_game"):
+		get_tree().reload_current_scene() # Quits the game
 	
 	if event.is_action_pressed("change_mouse_input"):
 		match Input.get_mouse_mode():

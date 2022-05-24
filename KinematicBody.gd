@@ -1,7 +1,9 @@
 extends KinematicBody
 class_name Movement
 
-export var mouse_sensitivity :=  0.5
+
+
+export var mouse_sensitivity :=  0.2
 export var gravity_multiplier := 3.0
 export var speed := 10
 export var acceleration := 8
@@ -29,13 +31,20 @@ func _input(event):
 		rotate_y(deg2rad(-event.relative.x * mouse_sensitivity))
 		head.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity))
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-90), deg2rad(90))
+#		self.get_position_in_parent() = Vector3(10,10,10)
 #		
 	
 func _physics_process(delta) -> void:
 	input_axis = Input.get_vector("move_back", "move_forward",
 			"move_left", "move_right")
 	
+	
 	direction_input()
+	
+	if velocity.y < -125: #150 también funciona pero tarda más
+		velocity.y = 0
+		translation = Vector3(10,30,0)
+#		get_tree().reload_current_scene() # Quits the game
 	
 	if is_on_floor():
 		snap = -get_floor_normal() - get_floor_velocity() * delta
@@ -99,3 +108,14 @@ func accelerate(delta: float) -> void:
 	velocity.z = temp_vel.z
 	
 
+
+
+#func _on_Entrance_body_entered(body):
+#	self.translation = get_parent().get_mode("Position3D").translation
+
+#func _on_Entrance_body_entered(body):
+#	translation = Vector3(10,10,10)
+
+
+func _on_Entrance_body_entered(_body):
+	translation = get_parent().get_node("Position3D").translation

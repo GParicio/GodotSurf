@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Levels/Inicio.gd" type="Script" id=1]
+[ext_resource path="res://addons/Botones/Picsart_22-05-21_11-07-26-542.png" type="Texture" id=2]
+[ext_resource path="res://addons/Botones/Picsart_22-05-21_11-05-11-618.png" type="Texture" id=3]
+[ext_resource path="res://addons/Botones/Picsart_22-05-21_11-06-24-274.png" type="Texture" id=4]
+[ext_resource path="res://addons/Botones/Picsart_22-05-21_11-06-46-290.png" type="Texture" id=5]
+[ext_resource path="res://addons/Botones/Picsart_22-05-21_11-07-02-412.png" type="Texture" id=6]
+
+[sub_resource type="ShaderMaterial" id=1]
+
+[node name="Inicio" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 1 )
+margin_right = 1021.0
+margin_bottom = 601.0
+color = Color( 0.921569, 0.972549, 0.913725, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Texto jugar" type="Label" parent="."]
+margin_left = 495.0
+margin_top = 335.0
+margin_right = 526.0
+margin_bottom = 349.0
+text = "PLAY"
+
+[node name="texto salir" type="Label" parent="."]
+margin_left = 495.0
+margin_top = 455.0
+margin_right = 526.0
+margin_bottom = 469.0
+text = "Salir"
+
+[node name="titulo" type="Label" parent="."]
+anchor_left = -0.081
+anchor_right = 0.069
+margin_left = 546.944
+margin_top = 200.0
+margin_right = 491.344
+margin_bottom = 224.0
+size_flags_horizontal = 3
+text = "COLOR SURFER"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 520, 128 )
+scale = Vector2( 0.751296, 0.78213 )
+texture = ExtResource( 3 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 200.0
+margin_top = 176.0
+margin_right = 800.0
+margin_bottom = 357.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="TextureButton"]
+margin_left = 32.0
+margin_top = 56.0
+margin_right = 72.0
+margin_bottom = 70.0
+text = "Jugar"
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+margin_left = 200.0
+margin_top = 376.0
+margin_right = 791.0
+margin_bottom = 550.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="TextureButton2"]
+margin_left = 32.0
+margin_top = 56.0
+margin_right = 72.0
+margin_bottom = 70.0
+text = "Salir"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]

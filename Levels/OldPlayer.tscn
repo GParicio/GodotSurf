@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.5
+height = 2.0
+
+[sub_resource type="CapsuleMesh" id=2]
+radius = 0.5
+mid_height = 2.0
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0643625, 25.0032, 206.463 )
+gravity_multiplier = 5.0
+speed = 75
+acceleration = 10
+
+[node name="CollisionShape" type="CollisionShape" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 0.012566, -0.999921, 0, 0.999921, 0.012566, 0, -3.8147e-06, 0 )
+shape = SubResource( 1 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 0.0242925, -0.999705, 0, 0.999705, 0.0242925, 0, -3.8147e-06, 0 )
+mesh = SubResource( 2 )
+
+[node name="cabeza" type="Spatial" parent="Player"]
+
+[node name="Camera" type="Camera" parent="Player/cabeza"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09816, -0.114639 )
+current = true
+fov = 102.2
+far = 1302.5

@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/1603290619_6bb78827d6303094b078e72255a037ca_env808.jpg-fd28f40bdb5f402a7a3871b669f3b3f4.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://addons/Botones/1603290619_6bb78827d6303094b078e72255a037ca_env808.jpg"
+dest_files=[ "res://.import/1603290619_6bb78827d6303094b078e72255a037ca_env808.jpg-fd28f40bdb5f402a7a3871b669f3b3f4.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

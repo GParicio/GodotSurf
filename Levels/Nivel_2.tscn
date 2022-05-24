@@ -1,0 +1,203 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://FirstPerson.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Main/Geometry/Floor.gd" type="Script" id=2]
+[ext_resource path="res://Levels/Nivel_2.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/color.jpg" type="Texture" id=4]
+[ext_resource path="res://Levels/Main/Geometry/Floor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Main/Environment.tres" type="Environment" id=6]
+[ext_resource path="res://addons/kenney_prototype_textures/light/texture_02.png" type="Texture" id=7]
+[ext_resource path="res://addons/kenney_prototype_textures/dark/texture_01.png" type="Texture" id=9]
+[ext_resource path="res://addons/kenney_prototype_textures/dark/texture_09.png" type="Texture" id=10]
+[ext_resource path="res://addons/kenney_prototype_textures/red/texture_05.png" type="Texture" id=11]
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_texture = ExtResource( 11 )
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_texture = ExtResource( 11 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="CubeMesh" id=10]
+material = SubResource( 3 )
+size = Vector3( 50, 1, 50 )
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_texture = ExtResource( 10 )
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_texture = ExtResource( 10 )
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_texture = ExtResource( 10 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="CubeMesh" id=14]
+material = SubResource( 5 )
+size = Vector3( 50, 2, 50 )
+
+[sub_resource type="SpatialMaterial" id=15]
+albedo_texture = ExtResource( 10 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="CubeMesh" id=16]
+material = SubResource( 7 )
+size = Vector3( 50, 2, 50 )
+
+[sub_resource type="SpatialMaterial" id=17]
+albedo_texture = ExtResource( 9 )
+metallic = 0.99
+
+[sub_resource type="Skin" id=18]
+
+[sub_resource type="SpatialMaterial" id=19]
+albedo_texture = ExtResource( 7 )
+
+[sub_resource type="SpatialMaterial" id=20]
+albedo_texture = ExtResource( 10 )
+metallic = 1.0
+
+[sub_resource type="SpatialMaterial" id=21]
+albedo_texture = ExtResource( 10 )
+metallic = 1.0
+
+[sub_resource type="SpatialMaterial" id=22]
+albedo_texture = ExtResource( 10 )
+metallic = 1.0
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Lighting" type="Node" parent="."]
+
+[node name="ArenaGeometry2" type="Spatial" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00136161, 0.0351963, 0.00745201 )
+
+[node name="inicio" type="Spatial" parent="Lighting/ArenaGeometry2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38342, 14.3309, 0 )
+
+[node name="fisico" parent="Lighting/ArenaGeometry2/inicio" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 208.736 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 8 )
+
+[node name="atras" parent="Lighting/ArenaGeometry2/inicio" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -5, 228.562 )
+visible = false
+skeleton = NodePath("../../..")
+
+[node name="izquierda" parent="Lighting/ArenaGeometry2/inicio" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -19.7174, -5, 208.787 )
+visible = false
+skeleton = NodePath("../../..")
+
+[node name="derecha" parent="Lighting/ArenaGeometry2/inicio" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 19.8131, -5, 208.787 )
+visible = false
+skeleton = NodePath("../../..")
+
+[node name="Plataforma final" parent="Lighting/ArenaGeometry2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.67524, -4.43539, -182.939 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 9 )
+script = ExtResource( 2 )
+
+[node name="mapa" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.65762, -26.2583, -26.4146 )
+
+[node name="techo" parent="mapa" instance=ExtResource( 5 )]
+transform = Transform( 3, 0, 0, 0, 4, 0, 0, 0, 14, -14.3426, 121.409, -44.6876 )
+mesh = SubResource( 10 )
+skeleton = NodePath("")
+material/0 = SubResource( 11 )
+
+[node name="atras" parent="mapa" instance=ExtResource( 5 )]
+transform = Transform( 5.73206e-15, 4.37114e-08, 3, 3, -4.37114e-08, 0, 1.31134e-07, 1, -1.31134e-07, -6.83107, 56.2983, 259.686 )
+mesh = SubResource( 10 )
+skeleton = NodePath("")
+material/0 = SubResource( 12 )
+
+[node name="izquierda" parent="mapa" instance=ExtResource( 5 )]
+transform = Transform( -1.29036e-07, -2.952, 0, 2.952, -1.29036e-07, 0, 0, 0, 12, -52.8099, 47.7655, -42.6433 )
+mesh = SubResource( 10 )
+skeleton = NodePath("")
+material/0 = SubResource( 13 )
+
+[node name="derecha" parent="mapa" instance=ExtResource( 5 )]
+transform = Transform( -1.29036e-07, 1, 0, -2.952, -4.37114e-08, 0, 0, 0, 12, 59.8458, 47.0814, -7.23349 )
+mesh = SubResource( 14 )
+skeleton = NodePath("")
+material/0 = SubResource( 15 )
+
+[node name="suelo" parent="mapa" instance=ExtResource( 5 )]
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 14, 0, 0, 0 )
+mesh = SubResource( 16 )
+skeleton = NodePath("")
+material/0 = SubResource( 17 )
+
+[node name="final blanco" parent="mapa" instance=ExtResource( 5 )]
+transform = Transform( 5.73206e-15, 4.37114e-08, 3, 3, -4.37114e-08, 0, 1.31134e-07, 1, -1.31134e-07, -6.83107, 56.2983, -297.362 )
+mesh = SubResource( 10 )
+skin = SubResource( 18 )
+skeleton = NodePath("")
+material/0 = SubResource( 19 )
+
+[node name="puerta derecha" parent="mapa" instance=ExtResource( 5 )]
+transform = Transform( 0, 0, 1, 3, 0, 0, 0, 1, 0, -37.0853, 56.298, -269.675 )
+mesh = SubResource( 10 )
+skin = SubResource( 18 )
+skeleton = NodePath("")
+material/0 = SubResource( 20 )
+
+[node name="puerta izquierda" parent="mapa" instance=ExtResource( 5 )]
+transform = Transform( 0, 0, 1, 3, 0, 0, 0, 1, 0, 46.5356, 56.298, -269.675 )
+mesh = SubResource( 10 )
+skin = SubResource( 18 )
+skeleton = NodePath("")
+material/0 = SubResource( 21 )
+
+[node name="puerta arriba" parent="mapa" instance=ExtResource( 5 )]
+transform = Transform( 3, 0, -4.37114e-08, -1.31134e-07, 1.91069e-15, -1, 0, 1, 1.91069e-15, 46.5356, 97.6031, -269.675 )
+mesh = SubResource( 10 )
+skin = SubResource( 18 )
+skeleton = NodePath("")
+material/0 = SubResource( 22 )
+
+[node name="Lighting2" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting2"]
+environment = ExtResource( 6 )
+
+[node name="OmniLight3" type="OmniLight" parent="Lighting2"]
+transform = Transform( 0.139906, -0.986711, -0.0826266, 0.818409, 0.162205, -0.551267, 0.557344, 0.00950324, 0.830227, -2.62267, 63.8437, -220.318 )
+omni_range = 566.722
+
+[node name="OmniLight2" type="OmniLight" parent="Lighting2"]
+transform = Transform( 0.751436, -0.642404, -0.150534, 0.593766, 0.757881, -0.270295, 0.287726, 0.113728, 0.950936, -2.56326, 67.0662, -55.3507 )
+omni_range = 566.722
+
+[node name="OmniLight" type="OmniLight" parent="Lighting2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56483, 66.9978, 184.377 )
+omni_range = 566.722
+
+[node name="OmniLight4" type="OmniLight" parent="Lighting2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.0558, 43.1381, 77.8526 )
+light_color = Color( 0.87451, 0.843137, 0.843137, 1 )
+light_energy = 0.881
+light_indirect_energy = 0.413
+omni_range = 566.722
+
+[node name="OmniLight5" type="OmniLight" parent="Lighting2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.2282, 39.3241, 77.8526 )
+light_color = Color( 0.87451, 0.847059, 0.847059, 1 )
+light_energy = 0.266
+omni_range = 566.722
+
+[node name="FirstPerson2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.3034, 201.42 )

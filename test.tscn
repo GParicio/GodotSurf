@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Levels/Main/Geometry/Cube.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Main/Geometry/Floor.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Skin" id=1]
+resource_local_to_scene = true
+
+[node name="--- Debugging process started ---Godot Engine v344stableofficial419e713a2 - httpsgodotengineorgOpenGL ES 30 Renderer NVIDIA GeForce GTX 1650PCIeSSE2OpenGL ES Batching ON ** Fast Close enabled in the \'L_Maingd\' script **** \'Esc\' to close \'Shift + F1\' to release mouse **--- Debugging process stopped ---Switch Scene TabSwitch Scene Tab" type="Spatial"]
+
+[node name="TooSteep2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 200, -16.5, 5.5, 8.5 )
+skin = SubResource( 1 )
+
+[node name="TooSteep2" parent="TooSteep2" instance=ExtResource( 1 )]
+transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 2, -16.5, 5.5, 8.5 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+
+[node name="Floor1" parent="." instance=ExtResource( 3 )]

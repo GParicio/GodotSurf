@@ -118,4 +118,23 @@ func accelerate(delta: float) -> void:
 
 
 func _on_Entrance_body_entered(_body):
-	translation = get_parent().get_node("Position3D").translation
+	translation = get_parent().get_node("Spawn_2").translation
+
+func _on_Muerte_body_entered(_body):
+	translation = get_parent().get_node("Spawn_1").translation
+
+func _on_Muerte_2_body_entered(_body):
+	translation = get_parent().get_node("Spawn_2").translation
+	 # Replace with function body.
+
+#func _on_Entrance_2_body_entered(_body):
+#	translation = get_parent().get_node("Spawn_2").translation
+
+#
+#func _on_Entrance_2_body_entered(body):
+#	translation = get_parent().get_node("Spawn_1").translation
+#	pass # Replace with function body.
+
+
+func _on_Entrance_2_body_entered(body):
+	translation = get_parent().get_node("Spawn_2").translation

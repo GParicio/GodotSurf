@@ -45,7 +45,7 @@ func _physics_process(delta) -> void:
 	
 	if velocity.y < -125: #150 también funciona pero tarda más
 		velocity.y = 0
-		translation = Vector3(10,30,0)
+		translation = get_parent().get_node("Spawn_1").translation
 #		get_tree().reload_current_scene() # Quits the game
 	
 	if is_on_floor():
@@ -124,23 +124,19 @@ func accelerate(delta: float) -> void:
 
 func _on_Entrance_body_entered(_body):
 	translation = get_parent().get_node("Spawn_2").translation
+	
 
 func _on_Muerte_body_entered(_body):
-	translation = get_parent().get_node("Spawn_1").translation
+	translation = get_parent().get_node("Spawn_3").translation
 #	$sonidomuerte.play()
 
 func _on_Muerte_2_body_entered(_body):
 	translation = get_parent().get_node("Spawn_2").translation
-	 # Replace with function body.
+	
 
-#func _on_Entrance_2_body_entered(_body):
-#	translation = get_parent().get_node("Spawn_2").translation
+func _on_Entrance_2_body_entered(_body):
+	translation = get_parent().get_node("Spawn_3").translation
 
-#
-#func _on_Entrance_2_body_entered(body):
-#	translation = get_parent().get_node("Spawn_1").translation
-#	pass # Replace with function body.
-
-
-func _on_Entrance_2_body_entered(body):
-	translation = get_parent().get_node("Spawn_2").translation
+func _on_muerte3_body_entered(_body):
+	translation = get_parent().get_node("Spawn_3").translation
+	

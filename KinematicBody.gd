@@ -31,13 +31,15 @@ func _input(event):
 		rotate_y(deg2rad(-event.relative.x * mouse_sensitivity))
 		head.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity))
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-90), deg2rad(90))
+		
 #		self.get_position_in_parent() = Vector3(10,10,10)
+  
 #		
 	
 func _physics_process(delta) -> void:
 	input_axis = Input.get_vector("move_back", "move_forward",
 			"move_left", "move_right")
-	
+		
 	
 	direction_input()
 	
@@ -56,6 +58,7 @@ func _physics_process(delta) -> void:
 		if Input.is_action_just_pressed("jump"):
 			snap = Vector3.ZERO
 			velocity.y = jump_height
+			$saltar2.play()
 	else:
 		# Workaround for 'vertical bump' when going off platform
 		if snap != Vector3.ZERO && velocity.y != 0:
@@ -69,6 +72,7 @@ func _physics_process(delta) -> void:
 	
 	velocity = move_and_slide_with_snap(velocity, snap, up_direction, 
 			stop_on_slope, 4, floor_max_angle)
+	
 
 
 func direction_input() -> void:
@@ -84,6 +88,7 @@ func direction_input() -> void:
 		direction += aim.x
 	direction.y = 0
 	direction = direction.normalized()
+	
 
 
 func accelerate(delta: float) -> void:
@@ -122,6 +127,7 @@ func _on_Entrance_body_entered(_body):
 
 func _on_Muerte_body_entered(_body):
 	translation = get_parent().get_node("Spawn_1").translation
+#	$sonidomuerte.play()
 
 func _on_Muerte_2_body_entered(_body):
 	translation = get_parent().get_node("Spawn_2").translation

@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://KinematicBody.gd" type="Script" id=1]
+[ext_resource path="res://Sounds/andar.wav" type="AudioStream" id=2]
+[ext_resource path="res://Sounds/salto.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/salto2.wav" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -30,3 +33,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0673823, 1.59166, -0.252199 
 current = true
 fov = 87.3
 far = 8192.0
+
+[node name="andar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="saltar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="saltar2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )

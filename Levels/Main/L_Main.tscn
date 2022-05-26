@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://FirstPerson.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Main/Geometry/Floor.tscn" type="PackedScene" id=2]
@@ -18,12 +18,23 @@
 [ext_resource path="res://Levels/Main/Node2D.gd" type="Script" id=16]
 [ext_resource path="res://addons/kenney_prototype_textures/red/texture_05.png" type="Texture" id=17]
 [ext_resource path="res://Levels/Nivel_2.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=19]
+[ext_resource path="res://Levels/Main/L_Main.tres" type="Material" id=20]
+[ext_resource path="res://Levels/Main/new_spatialmaterial.tres" type="Material" id=21]
 
-[sub_resource type="SpatialMaterial" id=24]
-albedo_texture = ExtResource( 9 )
+[sub_resource type="DynamicFont" id=32]
+size = 80
+font_data = ExtResource( 19 )
+
+[sub_resource type="StreamTexture" id=36]
+flags = 23
+load_path = "res://.import/color.jpg-78b3f889a40e34097de6fb5d358e35ee.s3tc.stex"
+
+[sub_resource type="SpatialMaterial" id=37]
+albedo_texture = SubResource( 36 )
 
 [sub_resource type="CubeMesh" id=4]
-material = SubResource( 24 )
+material = SubResource( 37 )
 size = Vector3( 50, 1, 50 )
 
 [sub_resource type="SpatialMaterial" id=25]
@@ -33,16 +44,14 @@ albedo_texture = ExtResource( 9 )
 material = SubResource( 25 )
 size = Vector3( 50, 2, 50 )
 
-[sub_resource type="SpatialMaterial" id=26]
-albedo_texture = ExtResource( 9 )
-
 [sub_resource type="CubeMesh" id=8]
-material = SubResource( 26 )
+material = ExtResource( 20 )
 size = Vector3( 50, 2, 50 )
 
 [sub_resource type="Skin" id=10]
 
 [sub_resource type="SpatialMaterial" id=11]
+albedo_color = Color( 0.258824, 0.792157, 0.2, 1 )
 albedo_texture = ExtResource( 11 )
 
 [sub_resource type="SpatialMaterial" id=12]
@@ -93,15 +102,24 @@ extents = Vector3( 0.221861, 0.629531, 1.89108 )
 [sub_resource type="SpatialMaterial" id=27]
 albedo_texture = ExtResource( 17 )
 
-[sub_resource type="SpatialMaterial" id=28]
-albedo_texture = ExtResource( 17 )
-
 [sub_resource type="CylinderMesh" id=29]
 
 [sub_resource type="CylinderMesh" id=30]
 
 [sub_resource type="BoxShape" id=31]
 extents = Vector3( 2.14504, 3.73747, 1 )
+
+[sub_resource type="CubeMesh" id=33]
+material = ExtResource( 21 )
+size = Vector3( 50, 1, 50 )
+
+[sub_resource type="CubeMesh" id=34]
+material = ExtResource( 21 )
+size = Vector3( 50, 2, 50 )
+
+[sub_resource type="CubeMesh" id=35]
+material = ExtResource( 21 )
+size = Vector3( 50, 2, 50 )
 
 [node name="Nivel_1" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.410734, 0.498449, 0.030405 )
@@ -112,20 +130,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47134, 26.4254, 210.158 )
 gravity_multiplier = 5.0
 air_control = 0.5
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="HUD" type="Node2D" parent="."]
 script = ExtResource( 16 )
 
-[node name="Label" type="Label" parent="Node2D"]
-margin_left = 978.0
-margin_top = 27.0
-margin_right = 996.0
-margin_bottom = 44.0
+[node name="Label" type="Label" parent="HUD"]
+margin_left = 894.0
+margin_top = 28.0
+margin_right = 912.0
+margin_bottom = 109.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 32 )
 script = ExtResource( 13 )
 
-[node name="Timer" type="Timer" parent="Node2D"]
+[node name="Timer" type="Timer" parent="HUD"]
 script = ExtResource( 15 )
 
 [node name="Tutorial" type="Spatial" parent="."]
@@ -163,6 +182,18 @@ omni_range = 566.722
 
 [node name="OmniLight6" type="OmniLight" parent="Tutorial/Lighting"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 379.638, 39.3241, -51.7093 )
+light_color = Color( 0.87451, 0.847059, 0.847059, 1 )
+light_energy = 0.266
+omni_range = 566.722
+
+[node name="OmniLight7" type="OmniLight" parent="Tutorial/Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 602.387, 39.3241, -51.7093 )
+light_color = Color( 0.87451, 0.847059, 0.847059, 1 )
+light_energy = 0.266
+omni_range = 566.722
+
+[node name="OmniLight8" type="OmniLight" parent="Tutorial/Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 602.387, 39.3241, 232.195 )
 light_color = Color( 0.87451, 0.847059, 0.847059, 1 )
 light_energy = 0.266
 omni_range = 566.722
@@ -365,7 +396,7 @@ skeleton = NodePath("../../..")
 [node name="Plataforma final" parent="Nivel_2/Spatial/ArenaGeometry2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.16766, -4.43539, -274.756 )
 skeleton = NodePath("../..")
-material/0 = SubResource( 28 )
+material/0 = ExtResource( 21 )
 script = ExtResource( 7 )
 
 [node name="final rojo" parent="Nivel_2/Spatial/ArenaGeometry2" instance=ExtResource( 2 )]
@@ -373,7 +404,7 @@ transform = Transform( 5.73206e-15, 4.37114e-08, 3, 3, -4.37114e-08, 0, 1.31134e
 mesh = SubResource( 4 )
 skin = SubResource( 10 )
 skeleton = NodePath("")
-material/0 = SubResource( 11 )
+material/0 = ExtResource( 21 )
 
 [node name="Muerte_2" type="Area" parent="Nivel_2"]
 transform = Transform( 26.6667, 0, 0, 0, 0.25, 0, 0, 0, 325, -0.317758, -5.44255, 62.6121 )
@@ -382,24 +413,6 @@ script = ExtResource( 10 )
 [node name="CollisionShape" type="CollisionShape" parent="Nivel_2/Muerte_2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.1, 1.17895, 2.38055, 0 )
 shape = SubResource( 9 )
-
-[node name="rampa izquierda2" type="Spatial" parent="Nivel_2"]
-transform = Transform( 0.111111, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 32.0483, 2.92733, 64.0102 )
-visible = false
-
-[node name="TooSteep2" parent="Nivel_2/rampa izquierda2" instance=ExtResource( 6 )]
-transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 200, 0, 0, 0 )
-mesh = SubResource( 29 )
-skin = SubResource( 1 )
-skeleton = NodePath("../../../Tutorial/ArenaGeometry2/rampa izquierda")
-material/0 = SubResource( 18 )
-
-[node name="TooSteep3" parent="Nivel_2/rampa izquierda2" instance=ExtResource( 6 )]
-transform = Transform( 3.5, -0.216506, 0, 6.06218, 0.125, 0, 0, 0, 200, -7, 0, 0 )
-mesh = SubResource( 30 )
-skin = SubResource( 1 )
-skeleton = NodePath("../../../Tutorial/ArenaGeometry2/rampa izquierda")
-material/0 = SubResource( 19 )
 
 [node name="rampitas" type="Spatial" parent="Nivel_2"]
 
@@ -530,16 +543,76 @@ script = ExtResource( 8 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.272858, 3.39953, -2.35229 )
 shape = SubResource( 31 )
 
-[node name="Spawn_2" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 282.376, 16.7373, 211.579 )
+[node name="Nivel_3" type="Spatial" parent="."]
+
+[node name="mapa" type="Spatial" parent="Nivel_3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 593.272, -5.96895, 64.9486 )
+
+[node name="techo" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+transform = Transform( 3, 0, 0, 0, 4, 0, 0, 0, 14, -14.3426, 121.409, -44.6876 )
+mesh = SubResource( 4 )
+skeleton = NodePath("")
+material/0 = ExtResource( 21 )
+
+[node name="atras" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+transform = Transform( 5.73206e-15, 4.37114e-08, 3, 3, -4.37114e-08, 0, 1.31134e-07, 1, -1.31134e-07, -6.83107, 56.2983, 259.686 )
+mesh = SubResource( 4 )
+skeleton = NodePath("")
+material/0 = ExtResource( 21 )
+
+[node name="izquierda" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+transform = Transform( -1.29036e-07, -2.952, 0, 2.952, -1.29036e-07, 0, 0, 0, 12, -52.8099, 47.7655, -42.6433 )
+mesh = SubResource( 33 )
+skeleton = NodePath("")
+
+[node name="derecha" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+transform = Transform( -1.29036e-07, 1, 0, -2.952, -4.37114e-08, 0, 0, 0, 12, 59.8458, 47.0814, -7.23349 )
+mesh = SubResource( 34 )
+skeleton = NodePath("")
+
+[node name="suelo" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 14, 0, 0, 0 )
+mesh = SubResource( 35 )
+skeleton = NodePath("")
+
+[node name="final rojo" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+transform = Transform( 5.73206e-15, 4.37114e-08, 3, 3, -4.37114e-08, 0, 1.31134e-07, 1, -1.31134e-07, -6.83107, 56.2983, -297.362 )
+mesh = SubResource( 4 )
+skin = SubResource( 10 )
+skeleton = NodePath("")
+material/0 = SubResource( 11 )
+
+[node name="puerta derecha" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+transform = Transform( 0, 0, 1, 3, 0, 0, 0, 1, 0, -37.0853, 56.298, -269.675 )
+mesh = SubResource( 4 )
+skin = SubResource( 10 )
+skeleton = NodePath("")
+material/0 = ExtResource( 21 )
+
+[node name="puerta izquierda" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+transform = Transform( 0, 0, 1, 3, 0, 0, 0, 1, 0, 46.5356, 56.298, -269.675 )
+mesh = SubResource( 4 )
+skin = SubResource( 10 )
+skeleton = NodePath("")
+material/0 = ExtResource( 21 )
+
+[node name="puerta arriba" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+transform = Transform( 3, 0, -4.37114e-08, -1.31134e-07, 1.91069e-15, -1, 0, 1, 1.91069e-15, -53.3755, 94.315, -269.675 )
+mesh = SubResource( 4 )
+skin = SubResource( 10 )
+skeleton = NodePath("")
+material/0 = ExtResource( 21 )
 
 [node name="Spawn_1" type="Position3D" parent="."]
 transform = Transform( 9, 0, 0, 0, 4, 0, 0, 0, 4, 8.59106, 33.6322, 208.042 )
 
-[connection signal="timeout" from="Node2D/Timer" to="Node2D" method="_on_Timer_timeout"]
+[node name="Spawn_2" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 282.376, 16.7373, 211.579 )
+
+[connection signal="timeout" from="HUD/Timer" to="HUD" method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Tutorial/Entrance" to="FirstPerson" method="_on_Entrance_body_entered"]
-[connection signal="body_entered" from="Tutorial/Muerte" to="Tutorial/Muerte" method="_on_Muerte_body_entered"]
 [connection signal="body_entered" from="Tutorial/Muerte" to="FirstPerson" method="_on_Muerte_body_entered"]
+[connection signal="body_entered" from="Tutorial/Muerte" to="Tutorial/Muerte" method="_on_Muerte_body_entered"]
 [connection signal="body_entered" from="Nivel_2/Muerte_2" to="FirstPerson" method="_on_Muerte_2_body_entered"]
 [connection signal="body_entered" from="Nivel_2/Muerte_2" to="Nivel_2/Muerte_2" method="_on_Muerte_body_entered"]
 [connection signal="body_entered" from="Nivel_2/Entrance_2" to="FirstPerson" method="_on_Entrance_2_body_entered"]

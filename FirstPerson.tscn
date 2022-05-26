@@ -16,7 +16,7 @@ speed = 75
 deceleration = 8
 
 [node name="CSGMesh" type="CSGMesh" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+transform = Transform( 0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 0, 0, 0 )
 mesh = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -27,4 +27,6 @@ shape = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="Head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0673823, 1.59166, -0.252199 )
+current = true
+fov = 87.3
 far = 8192.0

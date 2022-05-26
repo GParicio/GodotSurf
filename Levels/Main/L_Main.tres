@@ -1,0 +1,8 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[sub_resource type="StreamTexture" id=36]
+flags = 23
+load_path = "res://.import/color.jpg-78b3f889a40e34097de6fb5d358e35ee.s3tc.stex"
+
+[resource]
+albedo_texture = SubResource( 36 )

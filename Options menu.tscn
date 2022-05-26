@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://MenuSprites/IMG_0749.jpeg" type="Texture" id=1]
+[ext_resource path="res://MenuSprites/IMG_0748-removebg-preview.png" type="Texture" id=2]
+[ext_resource path="res://MenuSprites/Exit_hover-removebg-preview (1).png" type="Texture" id=3]
+[ext_resource path="res://MenuSprites/IMG_0747-removebg-preview.png" type="Texture" id=4]
+[ext_resource path="res://Options menu.gd" type="Script" id=5]
+
+[node name="Options menu" type="CanvasLayer"]
+script = ExtResource( 5 )
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 516, 304 )
+scale = Vector2( 0.503906, 0.395833 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Back" type="TextureButton" parent="."]
+margin_left = 436.0
+margin_top = 414.0
+margin_right = 1319.0
+margin_bottom = 708.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+
+[node name="HSlider" type="HSlider" parent="."]
+margin_left = 296.0
+margin_top = 279.0
+margin_right = 775.0
+margin_bottom = 432.0
+
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

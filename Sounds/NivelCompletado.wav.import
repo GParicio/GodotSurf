@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/NivelCompletado.wav-f49d07383431f9ebec83c60d11b3c21a.sample"
+
+[deps]
+
+source_file="res://Sounds/NivelCompletado.wav"
+dest_files=[ "res://.import/NivelCompletado.wav-f49d07383431f9ebec83c60d11b3c21a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

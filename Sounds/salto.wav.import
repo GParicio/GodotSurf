@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/salto.wav-b300b6b25c9e60394725635c97def17b.sample"
+
+[deps]
+
+source_file="res://Sounds/salto.wav"
+dest_files=[ "res://.import/salto.wav-b300b6b25c9e60394725635c97def17b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -16,9 +16,13 @@ func _ready():
 #	pass
 
 
-func _on_TextureButton2_pressed():
+func _on_TextureButton3_pressed():
 	get_tree().quit()
 
 
 func _on_TextureButton_pressed():
 	get_tree().change_scene("res://Levels/Main/L_Main.tscn")
+
+
+func _on_Options_pressed():
+	get_tree().change_scene("res://Options menu.tscn")

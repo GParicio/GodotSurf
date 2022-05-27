@@ -18,3 +18,8 @@ func _on_Back_pressed():
 
 
 
+
+
+func _on_CheckBox_pressed():
+	OS.window_fullscreen = !OS.window_fullscreen
+

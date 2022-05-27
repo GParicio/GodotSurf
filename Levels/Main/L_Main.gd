@@ -47,3 +47,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 				
 				
+
+
+func _on_musica_fondo_finished():
+	$musicafondo.play()

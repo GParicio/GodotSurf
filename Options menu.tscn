@@ -47,6 +47,7 @@ custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+pressed = true
 
 [node name="Label" type="Label" parent="."]
 margin_left = 402.0

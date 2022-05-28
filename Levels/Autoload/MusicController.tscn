@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Levels/Autoload/MusicController.gd" type="Script" id=2]
+
+[node name="MusicController" type="Node"]
+script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -17.479
+autoplay = true

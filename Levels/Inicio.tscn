@@ -33,6 +33,7 @@ margin_top = 232.0
 margin_right = 939.512
 margin_bottom = 514.0
 rect_scale = Vector2( 0.3, 0.3 )
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 2 )
@@ -49,6 +50,7 @@ margin_top = 328.0
 margin_right = 1259.0
 margin_bottom = 610.0
 rect_scale = Vector2( 0.3, 0.3 )
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 13 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 3 )
@@ -62,6 +64,7 @@ margin_top = 424.0
 margin_right = 1304.0
 margin_bottom = 718.0
 rect_scale = Vector2( 0.2, 0.2 )
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 11 )
 texture_hover = ExtResource( 10 )
@@ -71,15 +74,24 @@ position = Vector2( 37, 566 )
 scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 9 )
 
+[node name="LinkGithub" type="TextureButton" parent="LogoSprite"]
+anchor_right = 0.312
+margin_left = -420.0
+margin_top = -420.0
+margin_right = 2149.62
+margin_bottom = 2302.0
+rect_scale = Vector2( 0.3, 0.3 )
+mouse_default_cursor_shape = 2
+
 [node name="Title" type="Sprite" parent="."]
 position = Vector2( 512, 168 )
 texture = ExtResource( 12 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
-volume_db = -17.478
-autoplay = true
+volume_db = -13.983
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="TextureButton3" to="." method="_on_TextureButton3_pressed"]
+[connection signal="pressed" from="LogoSprite/LinkGithub" to="." method="_on_LinkGithub_pressed"]

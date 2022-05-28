@@ -1,19 +1,20 @@
 extends CanvasLayer
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("fullscreen"):
+		OS.window_fullscreen = !OS.window_fullscreen
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var cont = 0
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	if(cont == 0):
+		MusicController.play_musica_menu()
+		cont=1
+		
+#	if(!MusicController.play_musica_menu()):
+#		MusicController.play_musica_menu()
+	if (get_tree().current_scene.name == "Inicio"):
+		MusicController.play_musica_menu()
 
 
 func _on_TextureButton3_pressed():
@@ -26,3 +27,8 @@ func _on_TextureButton_pressed():
 
 func _on_Options_pressed():
 	get_tree().change_scene("res://Options menu.tscn")
+
+
+func _on_LinkGithub_pressed():
+	OS.shell_open("https://github.com/GParicio/GodotSurf")
+

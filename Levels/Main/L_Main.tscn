@@ -199,6 +199,48 @@ light_color = Color( 0.87451, 0.847059, 0.847059, 1 )
 light_energy = 0.266
 omni_range = 566.722
 
+[node name="OmniLight9" type="OmniLight" parent="Tutorial/Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 602.387, 39.3241, 22.0849 )
+light_color = Color( 0.87451, 0.847059, 0.847059, 1 )
+light_energy = 0.266
+omni_range = 566.722
+
+[node name="OmniLight10" type="OmniLight" parent="Tutorial/Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 602.387, 39.3241, -525.802 )
+light_color = Color( 0.87451, 0.847059, 0.847059, 1 )
+light_energy = 0.266
+omni_range = 566.722
+
+[node name="OmniLight11" type="OmniLight" parent="Tutorial/Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 653.449, 39.3241, 181.339 )
+light_color = Color( 0.87451, 0.847059, 0.847059, 1 )
+light_energy = 0.266
+omni_range = 566.722
+
+[node name="OmniLight12" type="OmniLight" parent="Tutorial/Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 653.449, 39.3241, -46.7999 )
+light_color = Color( 0.87451, 0.847059, 0.847059, 1 )
+light_energy = 0.266
+omni_range = 566.722
+
+[node name="OmniLight13" type="OmniLight" parent="Tutorial/Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 653.449, 39.3241, -223.598 )
+light_color = Color( 0.87451, 0.847059, 0.847059, 1 )
+light_energy = 0.266
+omni_range = 566.722
+
+[node name="OmniLight14" type="OmniLight" parent="Tutorial/Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 653.449, 39.3241, -723.406 )
+light_color = Color( 0.87451, 0.847059, 0.847059, 1 )
+light_energy = 0.706
+omni_range = 566.722
+
+[node name="OmniLight15" type="OmniLight" parent="Tutorial/Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 532.703, 39.3241, -523.623 )
+light_color = Color( 0.87451, 0.847059, 0.847059, 1 )
+light_energy = 0.706
+omni_range = 566.722
+
 [node name="mapa" type="Spatial" parent="Tutorial"]
 transform = Transform( 0.111111, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.676652, -5.96895, 64.9486 )
 
@@ -549,100 +591,65 @@ shape = SubResource( 31 )
 [node name="mapa" type="Spatial" parent="Nivel_3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 593.272, -5.96895, 64.9486 )
 
-[node name="techo" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+[node name="ParedesDelMapa" type="Spatial" parent="Nivel_3/mapa"]
+
+[node name="techo" parent="Nivel_3/mapa/ParedesDelMapa" instance=ExtResource( 2 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 32, 8.84662, 121.409, -526.289 )
 mesh = SubResource( 4 )
 skeleton = NodePath("")
 material/0 = ExtResource( 21 )
 
-[node name="atras" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+[node name="atras" parent="Nivel_3/mapa/ParedesDelMapa" instance=ExtResource( 2 )]
 transform = Transform( 5.73206e-15, 4.37114e-08, 3, 3, -4.37114e-08, 0, 1.31134e-07, 1, -1.31134e-07, -6.83105, 56.2983, 259.686 )
 mesh = SubResource( 4 )
 skeleton = NodePath("")
 material/0 = ExtResource( 21 )
 
-[node name="izquierda" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+[node name="izquierda" parent="Nivel_3/mapa/ParedesDelMapa" instance=ExtResource( 2 )]
 transform = Transform( -1.29036e-07, -2.952, 0, 2.952, -1.29036e-07, 0, 0, 0, 32, -89.0168, 47.7655, -483.691 )
 mesh = SubResource( 33 )
 skeleton = NodePath("")
 
-[node name="derecha" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+[node name="derecha" parent="Nivel_3/mapa/ParedesDelMapa" instance=ExtResource( 2 )]
 transform = Transform( -1.29036e-07, 1, 0, -2.952, -4.37114e-08, 0, 0, 0, 32, 94.7543, 47.0814, -456.519 )
 mesh = SubResource( 34 )
 skeleton = NodePath("")
 
-[node name="suelo" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+[node name="suelo" parent="Nivel_3/mapa/ParedesDelMapa" instance=ExtResource( 2 )]
 transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 32, 0, 0, -514.247 )
 mesh = SubResource( 35 )
 skeleton = NodePath("")
 
-[node name="final rojo" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+[node name="final rojo" parent="Nivel_3/mapa/ParedesDelMapa" instance=ExtResource( 2 )]
 transform = Transform( 5.73206e-15, 4.37114e-08, 3, 3, -4.37114e-08, 0, 1.31134e-07, 1, -1.31134e-07, -6.83105, 56.2983, -1050.98 )
 mesh = SubResource( 4 )
 skin = SubResource( 10 )
 skeleton = NodePath("")
 material/0 = SubResource( 11 )
 
-[node name="puerta derecha" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+[node name="puerta derecha" parent="Nivel_3/mapa/ParedesDelMapa" instance=ExtResource( 2 )]
 transform = Transform( 5.73206e-15, 4.37114e-08, 2, 3, -4.37114e-08, 0, 1.31134e-07, 1, -8.74228e-08, -64.0786, 56.298, -1023.29 )
 mesh = SubResource( 4 )
 skin = SubResource( 10 )
 skeleton = NodePath("")
 material/0 = ExtResource( 21 )
 
-[node name="puerta izquierda" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+[node name="puerta izquierda" parent="Nivel_3/mapa/ParedesDelMapa" instance=ExtResource( 2 )]
 transform = Transform( 5.73206e-15, 4.37114e-08, 2, 3, -4.37114e-08, 0, 1.31134e-07, 1, -8.74228e-08, 70.4154, 56.298, -1023.29 )
 mesh = SubResource( 4 )
 skin = SubResource( 10 )
 skeleton = NodePath("")
 material/0 = ExtResource( 21 )
 
-[node name="puerta arriba" parent="Nivel_3/mapa" instance=ExtResource( 2 )]
+[node name="puerta arriba" parent="Nivel_3/mapa/ParedesDelMapa" instance=ExtResource( 2 )]
 transform = Transform( 3, 0, -4.37114e-08, -1.31134e-07, 1.91069e-15, -1, 0, 1, 1.91069e-15, -53.3755, 94.315, -1023.29 )
 mesh = SubResource( 4 )
 skin = SubResource( 10 )
 skeleton = NodePath("")
 material/0 = ExtResource( 21 )
 
-[node name="rampa derecha" type="Spatial" parent="Nivel_3/mapa"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, 40.4086, 35.3429, -158.529 )
-visible = false
-
-[node name="TooSteep2" parent="Nivel_3/mapa/rampa derecha" instance=ExtResource( 6 )]
-transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 200, 0, 0, 0 )
-visible = false
-mesh = SubResource( 29 )
-skin = SubResource( 1 )
-skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
-material/0 = SubResource( 18 )
-
-[node name="TooSteep3" parent="Nivel_3/mapa/rampa derecha" instance=ExtResource( 6 )]
-transform = Transform( 3.5, -0.216506, 0, 6.06218, 0.125, 0, 0, 0, 200, -7, 0, 0 )
-visible = false
-mesh = SubResource( 30 )
-skin = SubResource( 1 )
-skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
-material/0 = SubResource( 19 )
-
-[node name="rampa izquierda3" type="Spatial" parent="Nivel_3/mapa"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, -17.1539, 35.8846, -153.474 )
-
-[node name="TooSteep2" parent="Nivel_3/mapa/rampa izquierda3" instance=ExtResource( 6 )]
-transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 200, 0, 0, 0 )
-mesh = SubResource( 29 )
-skin = SubResource( 1 )
-skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
-material/0 = SubResource( 18 )
-
-[node name="TooSteep3" parent="Nivel_3/mapa/rampa izquierda3" instance=ExtResource( 6 )]
-transform = Transform( 3.5, -0.216506, 0, 6.06218, 0.125, 0, 0, 0, 200, -7, 0, 0 )
-mesh = SubResource( 30 )
-skin = SubResource( 1 )
-skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
-material/0 = SubResource( 19 )
-
 [node name="rampa iquierda 2" type="Spatial" parent="Nivel_3/mapa"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.5, 4.07086, 45.3002, -640.858 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.5, 8.66583, 45.3002, -640.858 )
 
 [node name="TooSteep2" parent="Nivel_3/mapa/rampa iquierda 2" instance=ExtResource( 6 )]
 transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 200, 0, 0, 0 )
@@ -709,6 +716,142 @@ skin = SubResource( 1 )
 skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
 material/0 = SubResource( 19 )
 
+[node name="rampa derecha4" type="Spatial" parent="Nivel_3/mapa"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, 40.4086, 35.3429, -333.2 )
+
+[node name="TooSteep2" parent="Nivel_3/mapa/rampa derecha4" instance=ExtResource( 6 )]
+transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 31, 0, 0, 82 )
+mesh = SubResource( 29 )
+skin = SubResource( 1 )
+skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
+material/0 = SubResource( 18 )
+
+[node name="TooSteep3" parent="Nivel_3/mapa/rampa derecha4" instance=ExtResource( 6 )]
+transform = Transform( 3.5, -0.216506, 0, 6.06218, 0.125, 0, 0, 0, 31, -7, 0, 82 )
+mesh = SubResource( 30 )
+skin = SubResource( 1 )
+skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
+material/0 = SubResource( 19 )
+
+[node name="rampa derecha5" type="Spatial" parent="Nivel_3/mapa"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, 40.4086, 35.3429, -481.726 )
+
+[node name="TooSteep2" parent="Nivel_3/mapa/rampa derecha5" instance=ExtResource( 6 )]
+transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 31, 0, 0, 82 )
+mesh = SubResource( 29 )
+skin = SubResource( 1 )
+skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
+material/0 = SubResource( 18 )
+
+[node name="TooSteep3" parent="Nivel_3/mapa/rampa derecha5" instance=ExtResource( 6 )]
+transform = Transform( 3.5, -0.216506, 0, 6.06218, 0.125, 0, 0, 0, 31, -7, 0, 82 )
+mesh = SubResource( 30 )
+skin = SubResource( 1 )
+skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
+material/0 = SubResource( 19 )
+
+[node name="rampa IZquierda4" type="Spatial" parent="Nivel_3/mapa"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.5, 43.5526, 54.8507, -818.591 )
+
+[node name="TooSteep2" parent="Nivel_3/mapa/rampa IZquierda4" instance=ExtResource( 6 )]
+transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 200, 0, 0, 0 )
+mesh = SubResource( 29 )
+skin = SubResource( 1 )
+skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
+material/0 = SubResource( 18 )
+
+[node name="TooSteep3" parent="Nivel_3/mapa/rampa IZquierda4" instance=ExtResource( 6 )]
+transform = Transform( 3.5, -0.216506, 0, 6.06218, 0.125, 0, 0, 0, 200, -7, 0, 0 )
+mesh = SubResource( 30 )
+skin = SubResource( 1 )
+skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
+material/0 = SubResource( 19 )
+
+[node name="rampa izquierdaBuena" type="Spatial" parent="Nivel_3/mapa"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, -17.6262, 35.3429, -239.749 )
+
+[node name="TooSteep2" parent="Nivel_3/mapa/rampa izquierdaBuena" instance=ExtResource( 6 )]
+transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 31, 0, 0, 160 )
+mesh = SubResource( 29 )
+skin = SubResource( 1 )
+skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
+material/0 = SubResource( 18 )
+
+[node name="TooSteep3" parent="Nivel_3/mapa/rampa izquierdaBuena" instance=ExtResource( 6 )]
+transform = Transform( 3.5, -0.216506, 0, 6.06218, 0.125, 0, 0, 0, 31, -7, 0, 160 )
+mesh = SubResource( 30 )
+skin = SubResource( 1 )
+skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
+material/0 = SubResource( 19 )
+
+[node name="rampa izquierdaBuena2" type="Spatial" parent="Nivel_3/mapa"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, -17.6262, 35.3429, -402.27 )
+
+[node name="TooSteep2" parent="Nivel_3/mapa/rampa izquierdaBuena2" instance=ExtResource( 6 )]
+transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 31, 0, 0, 160 )
+mesh = SubResource( 29 )
+skin = SubResource( 1 )
+skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
+material/0 = SubResource( 18 )
+
+[node name="TooSteep3" parent="Nivel_3/mapa/rampa izquierdaBuena2" instance=ExtResource( 6 )]
+transform = Transform( 3.5, -0.216506, 0, 6.06218, 0.125, 0, 0, 0, 31, -7, 0, 160 )
+mesh = SubResource( 30 )
+skin = SubResource( 1 )
+skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
+material/0 = SubResource( 19 )
+
+[node name="rampa izquierdaBuena3" type="Spatial" parent="Nivel_3/mapa"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, -17.6262, 35.3429, -543.089 )
+
+[node name="TooSteep2" parent="Nivel_3/mapa/rampa izquierdaBuena3" instance=ExtResource( 6 )]
+transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 31, 0, 0, 160 )
+mesh = SubResource( 29 )
+skin = SubResource( 1 )
+skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
+material/0 = SubResource( 18 )
+
+[node name="TooSteep3" parent="Nivel_3/mapa/rampa izquierdaBuena3" instance=ExtResource( 6 )]
+transform = Transform( 3.5, -0.216506, 0, 6.06218, 0.125, 0, 0, 0, 31, -7, 0, 160 )
+mesh = SubResource( 30 )
+skin = SubResource( 1 )
+skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
+material/0 = SubResource( 19 )
+
+[node name="rampa izquierdaBuena4" type="Spatial" parent="Nivel_3/mapa"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.656, -17.6262, 35.3429, -673.017 )
+
+[node name="TooSteep2" parent="Nivel_3/mapa/rampa izquierdaBuena4" instance=ExtResource( 6 )]
+transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 31, 0, 0, 160 )
+mesh = SubResource( 29 )
+skin = SubResource( 1 )
+skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
+material/0 = SubResource( 18 )
+
+[node name="TooSteep3" parent="Nivel_3/mapa/rampa izquierdaBuena4" instance=ExtResource( 6 )]
+transform = Transform( 3.5, -0.216506, 0, 6.06218, 0.125, 0, 0, 0, 31, -7, 0, 160 )
+mesh = SubResource( 30 )
+skin = SubResource( 1 )
+skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
+material/0 = SubResource( 19 )
+
+[node name="rampa derecha6" type="Spatial" parent="Nivel_3/mapa"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, 40.4086, 35.3429, -647.435 )
+
+[node name="TooSteep2" parent="Nivel_3/mapa/rampa derecha6" instance=ExtResource( 6 )]
+transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 31, 0, 0, 82 )
+mesh = SubResource( 29 )
+skin = SubResource( 1 )
+skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
+material/0 = SubResource( 18 )
+
+[node name="TooSteep3" parent="Nivel_3/mapa/rampa derecha6" instance=ExtResource( 6 )]
+transform = Transform( 3.5, -0.216506, 0, 6.06218, 0.125, 0, 0, 0, 31, -7, 0, 82 )
+mesh = SubResource( 30 )
+skin = SubResource( 1 )
+skeleton = NodePath("../../../../Tutorial/ArenaGeometry2/rampa izquierda")
+material/0 = SubResource( 19 )
+
 [node name="Paredes" type="Spatial" parent="Nivel_3"]
 
 [node name="PARED" parent="Nivel_3/Paredes" instance=ExtResource( 2 )]
@@ -748,7 +891,7 @@ skeleton = NodePath("")
 material/0 = ExtResource( 21 )
 
 [node name="PARED6" parent="Nivel_3/Paredes" instance=ExtResource( 2 )]
-transform = Transform( 5.73206e-15, 4.37114e-08, 3, 3, -4.37114e-08, 0, 1.31134e-07, 1, -1.31134e-07, 658.452, 76.1833, -331.678 )
+transform = Transform( 5.73206e-15, 4.37114e-08, 3, 3, -4.37114e-08, 0, 1.31134e-07, 1, -1.31134e-07, 672.872, 76.1833, -331.678 )
 mesh = SubResource( 4 )
 skeleton = NodePath("")
 material/0 = ExtResource( 21 )
@@ -777,7 +920,7 @@ skeleton = NodePath("../../..")
 material/0 = SubResource( 27 )
 
 [node name="fisico final" parent="Nivel_3" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 601.142, 25.3314, -937.666 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 596.901, 25.3314, -937.666 )
 skeleton = NodePath("../../../..")
 material/0 = SubResource( 27 )
 

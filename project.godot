@@ -36,6 +36,7 @@ UserData="*res://addons/github-integration/scripts/user_data.gd"
 IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
 RestHandler="*res://addons/github-integration/scripts/RestHandler.gd"
 MusicController="*res://Levels/Autoload/MusicController.tscn"
+Pause="*res://Levels/Autoload/Pause.tscn"
 
 [display]
 

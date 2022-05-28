@@ -55,8 +55,8 @@ func _input(event: InputEvent) -> void:
 #		cabeza.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity))
 #		cabeza.rotation.x = clamp(cabeza.rotation.x, deg2rad(-90), deg2rad(90))
 	
-	if event.is_action_pressed("ui_cancel"):
-		get_tree().quit() # Quits the game
+#	if event.is_action_pressed("ui_cancel"):
+#		get_tree().quit() # Quits the game
 	
 	if event.is_action_pressed("change_mouse_input"):
 		match Input.get_mouse_mode():

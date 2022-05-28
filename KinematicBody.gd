@@ -113,30 +113,29 @@ func accelerate(delta: float) -> void:
 	velocity.z = temp_vel.z
 	
 
-
-
-#func _on_Entrance_body_entered(body):
-#	self.translation = get_parent().get_mode("Position3D").translation
-
-#func _on_Entrance_body_entered(body):
-#	translation = Vector3(10,10,10)
-
-
 func _on_Entrance_body_entered(_body):
 	translation = get_parent().get_node("Spawn_2").translation
-	
 
 func _on_Muerte_body_entered(_body):
 	translation = get_parent().get_node("Spawn_3").translation
-#	$sonidomuerte.play()
 
 func _on_Muerte_2_body_entered(_body):
 	translation = get_parent().get_node("Spawn_2").translation
-	
 
 func _on_Entrance_2_body_entered(_body):
 	translation = get_parent().get_node("Spawn_3").translation
 
 func _on_muerte3_body_entered(_body):
 	translation = get_parent().get_node("Spawn_3").translation
-	
+
+func _on_muerte3_1_body_entered(body):
+	translation = get_parent().get_node("Spawn_3_1").translation
+
+func _on_Entrance_3_body_entered(body):
+	translation = get_parent().get_node("Spawn_4").translation
+
+func _on_Muerte_4_body_entered(body):
+	translation = get_parent().get_node("Spawn_4").translation
+
+func _on_Entrance_4_body_entered(body):
+	translation = get_parent().get_node("Spawn_4").translation

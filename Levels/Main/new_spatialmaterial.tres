@@ -1,7 +1,9 @@
 [gd_resource type="SpatialMaterial" load_steps=2 format=2]
 
-[ext_resource path="res://Sprites/color.jpg" type="Texture" id=1]
+[sub_resource type="StreamTexture" id=1]
+flags = 23
+load_path = "res://.import/color.jpg-78b3f889a40e34097de6fb5d358e35ee.s3tc.stex"
 
 [resource]
 albedo_color = Color( 0.447059, 0.858824, 0.392157, 1 )
-albedo_texture = ExtResource( 1 )
+albedo_texture = SubResource( 1 )

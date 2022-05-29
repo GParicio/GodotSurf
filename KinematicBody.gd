@@ -16,7 +16,7 @@ var velocity := Vector3()
 var snap := Vector3()
 var up_direction := Vector3.UP
 var stop_on_slope := true
-onready var floor_max_angle: float = deg2rad(45.0)
+onready var floor_max_angle: float = deg2rad(10.0)
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
 onready var gravity = (ProjectSettings.get_setting("physics/3d/default_gravity") 
 		* gravity_multiplier)
@@ -117,7 +117,7 @@ func _on_Entrance_body_entered(_body):
 	translation = get_parent().get_node("Spawn_2").translation
 
 func _on_Muerte_body_entered(_body):
-	translation = get_parent().get_node("Spawn_3").translation
+	translation = get_parent().get_node("Spawn_5").translation
 
 func _on_Muerte_2_body_entered(_body):
 	translation = get_parent().get_node("Spawn_2").translation
@@ -138,4 +138,13 @@ func _on_Muerte_4_body_entered(body):
 	translation = get_parent().get_node("Spawn_4").translation
 
 func _on_Entrance_4_body_entered(body):
-	translation = get_parent().get_node("Spawn_4").translation
+	translation = get_parent().get_node("Spawn_5").translation
+
+func _on_muerte5_1_body_entered(body):
+	translation = get_parent().get_node("Spawn_5_1").translation
+
+func _on_muerte5_body_entered(body):
+	translation = get_parent().get_node("Spawn_5").translation
+
+func _on_Entrance_5_body_entered(body):
+	translation = get_parent().get_node("Spawn_5").translation

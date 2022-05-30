@@ -364,6 +364,30 @@ light_color = Color( 0.87451, 0.847059, 0.847059, 1 )
 light_energy = 0.706
 omni_range = 566.722
 
+[node name="OmniLight20" type="OmniLight" parent="Tutorial/Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1198.93, 68.5564, 213.896 )
+light_color = Color( 0.87451, 0.847059, 0.847059, 1 )
+light_energy = 0.706
+omni_range = 566.722
+
+[node name="OmniLight21" type="OmniLight" parent="Tutorial/Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1251.56, 68.5564, 213.896 )
+light_color = Color( 0.87451, 0.847059, 0.847059, 1 )
+light_energy = 0.706
+omni_range = 566.722
+
+[node name="OmniLight22" type="OmniLight" parent="Tutorial/Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1198.93, 68.5564, -1.1922 )
+light_color = Color( 0.87451, 0.847059, 0.847059, 1 )
+light_energy = 0.706
+omni_range = 566.722
+
+[node name="OmniLight23" type="OmniLight" parent="Tutorial/Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1259.49, 68.5564, 114.066 )
+light_color = Color( 0.87451, 0.847059, 0.847059, 1 )
+light_energy = 0.706
+omni_range = 566.722
+
 [node name="mapa" type="Spatial" parent="Tutorial"]
 transform = Transform( 0.111111, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.676652, -5.96895, 64.9486 )
 

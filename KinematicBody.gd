@@ -117,7 +117,7 @@ func _on_Entrance_body_entered(_body):
 	translation = get_parent().get_node("Spawn_2").translation
 
 func _on_Muerte_body_entered(_body):
-	translation = get_parent().get_node("Spawn_5").translation
+	translation = get_parent().get_node("Spawn_1").translation
 
 func _on_Muerte_2_body_entered(_body):
 	translation = get_parent().get_node("Spawn_2").translation
